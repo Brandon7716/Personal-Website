@@ -70,7 +70,6 @@ const gameBoard = (() => {
   const checkforWin = (index) => {
     let indexOne;
     let indexTwo;
-    console.log(index);
     //check 2 above
     if (index >= 6) {
       indexOne = index - 3;
@@ -79,9 +78,7 @@ const gameBoard = (() => {
         displayController.isTaken(indexOne) == currPlayer &&
         displayController.isTaken(indexTwo) == currPlayer
       ) {
-        console.log("check 2 above");
         isWin = true;
-        console.log(index, indexOne, indexTwo, currPlayer);
         displayController.setWin(index, indexOne, indexTwo);
       }
     }
@@ -93,9 +90,7 @@ const gameBoard = (() => {
         displayController.isTaken(indexOne) == currPlayer &&
         displayController.isTaken(indexTwo) == currPlayer
       ) {
-        console.log("check 2 right");
         isWin = true;
-        console.log(index, indexOne, indexTwo, currPlayer);
         displayController.setWin(index, indexOne, indexTwo);
       }
     }
@@ -107,9 +102,7 @@ const gameBoard = (() => {
         displayController.isTaken(indexOne) == currPlayer &&
         displayController.isTaken(indexTwo) == currPlayer
       ) {
-        console.log("check 2 below");
         isWin = true;
-        console.log(index, indexOne, indexTwo, currPlayer);
         displayController.setWin(index, indexOne, indexTwo);
       }
     }
@@ -121,9 +114,7 @@ const gameBoard = (() => {
         displayController.isTaken(indexOne) == currPlayer &&
         displayController.isTaken(indexTwo) == currPlayer
       ) {
-        console.log("check 2 left");
         isWin = true;
-        console.log(index, indexOne, indexTwo, currPlayer);
         displayController.setWin(index, indexOne, indexTwo);
       }
     }
@@ -136,9 +127,7 @@ const gameBoard = (() => {
         displayController.isTaken(indexOne) == currPlayer &&
         displayController.isTaken(indexTwo) == currPlayer
       ) {
-        console.log("check between top  bot");
         isWin = true;
-        console.log(index, indexOne, indexTwo, currPlayer);
         displayController.setWin(index, indexOne, indexTwo);
       }
     }
@@ -150,9 +139,7 @@ const gameBoard = (() => {
         displayController.isTaken(indexOne) == currPlayer &&
         displayController.isTaken(indexTwo) == currPlayer
       ) {
-        console.log("check between left  right");
         isWin = true;
-        console.log(index, indexOne, indexTwo, currPlayer);
         displayController.setWin(index, indexOne, indexTwo);
       }
     }
@@ -167,9 +154,7 @@ const gameBoard = (() => {
           displayController.isTaken(indexOne) == currPlayer &&
           displayController.isTaken(indexTwo) == currPlayer
         ) {
-          console.log("0: check 2 lower right");
           isWin = true;
-          console.log(index, indexOne, indexTwo, currPlayer);
           displayController.setWin(index, indexOne, indexTwo);
         }
       }
@@ -182,9 +167,7 @@ const gameBoard = (() => {
           displayController.isTaken(indexOne) == currPlayer &&
           displayController.isTaken(indexTwo) == currPlayer
         ) {
-          console.log("2: check 2 lower left");
           isWin = true;
-          console.log(index, indexOne, indexTwo, currPlayer);
           displayController.setWin(index, indexOne, indexTwo);
         }
       }
@@ -197,9 +180,7 @@ const gameBoard = (() => {
           displayController.isTaken(indexOne) == currPlayer &&
           displayController.isTaken(indexTwo) == currPlayer
         ) {
-          console.log("4: check between main diagonals \\");
           isWin = true;
-          console.log(index, indexOne, indexTwo, currPlayer);
           displayController.setWin(index, indexOne, indexTwo);
         }
 
@@ -210,9 +191,7 @@ const gameBoard = (() => {
           displayController.isTaken(indexOne) == currPlayer &&
           displayController.isTaken(indexTwo) == currPlayer
         ) {
-          console.log("4: check between main diagonals /");
           isWin = true;
-          console.log(index, indexOne, indexTwo, currPlayer);
           displayController.setWin(index, indexOne, indexTwo);
         }
       }
@@ -225,9 +204,7 @@ const gameBoard = (() => {
           displayController.isTaken(indexOne) == currPlayer &&
           displayController.isTaken(indexTwo) == currPlayer
         ) {
-          console.log("6: check 2 upper right");
           isWin = true;
-          console.log(index, indexOne, indexTwo, currPlayer);
           displayController.setWin(index, indexOne, indexTwo);
         }
       }
@@ -239,9 +216,7 @@ const gameBoard = (() => {
           displayController.isTaken(indexOne) == currPlayer &&
           displayController.isTaken(indexTwo) == currPlayer
         ) {
-          console.log("8: check 2 upper left");
           isWin = true;
-          console.log(index, indexOne, indexTwo, currPlayer);
           displayController.setWin(index, indexOne, indexTwo);
         }
       }
