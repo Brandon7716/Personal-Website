@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Project-Library</title>
+  </head>
+  <body>
+    <div id="header"><p>Library</p></div>
+    <!-- FORM IS HIDDEN BY DEFAULT UNTIL + ADD BOOK IS PRESSED -->
+    <form
+      action=""
+      method="post"
+      class="form-overlay form-overlay-hidden"
+      id="form-overlay">
+      <fieldset class="centered-field">
+        <h1>Add new book</h1>
+        <input type="text" placeholder="Title" name="title" required />
+        <input type="text" placeholder="Author" name="author" required />
+        <input
+          type="number"
+          placeholder="Pages"
+          name="pages"
+          min="0"
+          required />
+        <div>
+          <label for="read">Have you read it?</label>
+          <input type="checkbox" name="read" />
+        </div>
+        <div>
+          <button type="submit" class="btn-submit" id="btnSubmit">
+            Submit
+          </button>
+          <button type="button" class="btn-close" id="btnClose">Close</button>
+        </div>
+      </fieldset>
+    </form>
+    <div class="btnAdd-container"><button id="btnAdd">+ Add Book</button></div>
+    <div id="book-container"></div>
+  </body>
+</html>

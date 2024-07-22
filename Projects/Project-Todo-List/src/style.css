@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-grey: #212529;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  font-family: "Roboto";
+  background-color: var(--dark-grey);
+  color: white;
+  padding: 20px;
+  font-size: 3rem;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+#side-bar {
+  width: 200px;
+  font-family: "Roboto";
+  background-color: #ddd;
+  color: black;
+  font-size: 2rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.default-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.small {
+  font-size: 1rem !important;
+}
+
+.btn-default {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* This is to stop the icon and text from bubbling when clicked */
+.project-item * {
+  user-select: none;
+  pointer-events: none;
+}
+
+.left {
+  text-align: left;
+}
+
+.btn-default:hover {
+  background-color: #adb5bd;
+}
+
+.active {
+  background-color: #adb5bd;
+}
+
+#project-sidebar-header {
+  font-size: 1.5rem;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 200px;
+  /* To enable scrollbar */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.project-item {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
+.project-preview-task {
+  min-width: 400px;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+  gap: 20px;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+#project-preview-list {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.date:hover {
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.btn-add:hover {
+  background-color: #adb5bd;
+}
+
+.btn-add-task {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.btn-add-task:hover {
+  background-color: #adb5bd;
+}
+
+#project-preview {
+  font-family: "Roboto";
+  background-color: white;
+  font-size: 2rem;
+  color: black;
+  flex: 1;
+  padding: 10px;
+
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+footer {
+  font-family: "Roboto";
+  font-size: 1rem;
+  background-color: var(--dark-grey);
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

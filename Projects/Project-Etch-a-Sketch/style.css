@@ -1,0 +1,51 @@
+#container {
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 0;
+  border: 10px solid black;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+div#container {
+  /* Fixes dragging issue which was caused by trying to select a div */
+  user-select: none;
+}
+
+body {
+  text-align: center;
+  background-color: tan;
+  box-sizing: border-box;
+}
+
+#color-select {
+  display: flex;
+  justify-content: center;
+  width: 800px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+#color-container {
+  display: flex;
+  justify-content: center;
+}
+
+#slide-container {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+}

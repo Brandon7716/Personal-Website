@@ -1,0 +1,17 @@
+{
+  "name": "project-todo-list",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite serve ./src",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  }
+}

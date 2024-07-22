@@ -54,3 +54,24 @@ footer {
   width: 100%;
   padding: 10px;
 }
+
+a {
+  text-decoration: none;
+}
+
+/* Remove default link color */
+a {
+  color: inherit; /* Inherit color from parent element */
+}
+
+/* Remove border */
+a:focus,
+a:active {
+  outline: none;
+  border: none;
+}
+
+/* Optionally, reset any other default styles */
+a {
+  background: none; /* Remove background if any */
+}

@@ -1,0 +1,53 @@
+h1 {
+  text-align: center;
+}
+nav {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+}
+
+.drop-btn {
+  display: none;
+}
+
+#frame {
+  background-color: blue;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+  background-color: red;
+  display: none;
+}
+
+#slide-btn {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+#slide-btn > button {
+  height: 50px;
+  width: 200px;
+}
+
+#active-btn {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#active-btn > button {
+  height: 50px;
+  width: 50px;
+}
+
+button:hover {
+  background-color: rgb(199, 199, 199) !important;
+}

@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* This stops issue with elements extending outside of viewport */
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Bondi;
+  src: url("./BodoniModa.ttf");
+  font-weight: 600;
+}
+
+:root {
+  --backgroud-light: rgba(0, 0, 0, 0.6);
+  --main-width: 700px;
+}
+
+body {
+  background-image: url(images/background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  font-family: "Bondi";
+}
+
+#page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 4rem;
+  padding: 20px;
+  width: 100%;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  border-style: none;
+  padding: 10px;
+  font-family: "Bondi";
+  font-size: 2rem;
+  border-bottom: 5px solid white;
+}
+
+.btn:hover {
+  border-color: orange;
+  color: orange;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Add auto margin to the main content */
+main {
+  flex: 1;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+footer {
+  background-color: black;
+  text-align: center;
+  font-size: 2.4rem;
+  padding: 20px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.home-container,
+.contact-container {
+  width: var(--main-width);
+  padding: 50px;
+  background-color: var(--backgroud-light);
+  border: 10px solid orange;
+  text-align: center;
+}
+
+/* HOME  */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-container img {
+  height: 300px;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* MENU  */
+
+.menu-container {
+  padding: 50px;
+  background-color: var(--backgroud-light);
+  border: 10px solid orange;
+  text-align: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 20px;
+}
+
+.menu-container img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border: 5px solid orange;
+}
+
+/* CONTACT */
+.contact-container {
+}

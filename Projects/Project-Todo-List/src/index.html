@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-Todo-List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./display.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/ccc67ddc6c.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>Todo List</header>
+    <main>
+      <nav id="side-bar">
+        <div class="default-project-list">
+          <button id="home" class="btn-default left">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </button>
+          <button id="today" class="btn-default left">
+            <i class="fa-solid fa-calendar-day"></i>
+            Today
+          </button>
+          <button id="week" class="btn-default left">
+            <i class="fa-solid fa-calendar-week"></i>
+            This week
+          </button>
+        </div>
+
+        <h1 id="project-sidebar-header">Projects</h1>
+        <button id="btn-add" class="btn-add">
+          <i class="fa-solid fa-plus"></i>
+          Add Project
+        </button>
+        <div id="project-list" class="projects-list"></div>
+      </nav>
+
+      <div id="project-preview">
+        <h1 id="project-title">Home</h1>
+        <button id="btn-add-task" class="btn-add-task">
+          <i class="fa-solid fa-plus"></i>
+          Add Task
+        </button>
+        <div id="project-preview-list"></div>
+      </div>
+    </main>
+    <footer>Copyright © 2023 Brandon7716</footer>
+  </body>
+</html>

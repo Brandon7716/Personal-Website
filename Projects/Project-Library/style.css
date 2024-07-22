@@ -1,0 +1,153 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./Roboto-Black.ttf);
+}
+
+body {
+  font-family: "Roboto", "Times New Roman", Times, serif;
+}
+
+#header {
+  background-color: #84828f;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 50px;
+  color: white;
+}
+
+#btnAdd {
+  background-color: #fef5ef;
+  font-size: 20px;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+}
+
+.btnAdd-container {
+  display: flex;
+  justify-content: center;
+}
+
+#btnAdd:active {
+  background-color: #84828f;
+}
+
+#book-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.book {
+  height: fit-content;
+  width: 400px;
+  background-color: #994b8c;
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  border: 8px solid black;
+  border-radius: 15px;
+}
+
+.book-button {
+  margin: 10px;
+  background-color: #fef5ef;
+  border: 5px solid black;
+  height: fit-content;
+  width: 200px;
+  font-size: 30px;
+}
+
+.read {
+  background-color: lightgreen;
+}
+
+.read:active {
+  background-color: rgba(0, 128, 0, 0.5);
+}
+.not-read {
+  background-color: red;
+}
+
+.not-read:active {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.book-remove:active {
+  background: grey;
+}
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.form-overlay-hidden {
+  visibility: hidden;
+}
+
+.form-overlay-visible {
+  visibility: visible;
+}
+
+.centered-field {
+  background-color: #ffffff; /* Adjust the background color as needed */
+  position: relative;
+  top: -25%;
+  padding: 20px; /* Adjust the padding as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border: white;
+  border-radius: 15px;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background-color: lightgreen;
+  border-radius: 15px;
+  border: none;
+}
+
+.btn-submit:hover {
+  filter: brightness(90%);
+}
+
+.btn-close {
+  padding: 10px 20px;
+  background-color: red;
+  border-radius: 15px;
+  border: none;
+}
+
+.btn-close:hover {
+  filter: brightness(90%);
+}
