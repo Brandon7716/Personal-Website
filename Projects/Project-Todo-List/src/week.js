@@ -4,7 +4,7 @@
 // with the start date being whatever TODAY
 // IS
 
-import { Project } from "./project";
+import { Project } from "./project.js";
 export function getWeeklyTasks(projects) {
   const startDate = new Date();
   startDate.setHours(0, 0, 0, 0);
