@@ -8,6 +8,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   API_KEY = key.value;
   console.log(API_KEY);
+  img.src = "loading.gif";
   searchCB(search.value);
 });
 
@@ -19,11 +20,23 @@ function searchCB(term) {
     }
   )
     .then((response) => {
-      img.src = "loading.gif";
-      return response.json();
+      if (response.status == 401) {
+        throw new Error("BAD API KEY");
+      } else {
+        return response.json();
+      }
     })
     .then((response) => {
-      img.src = response.data.images.original.url;
+      console.log(response);
+      if (response.data.length == 0) {
+        img.src = "nothing_found.png";
+      } else {
+        img.src = response.data.images.original.url;
+      }
+    })
+    .catch((response) => {
+      img.src = "bad_key.png";
+      console.log(response);
     });
 
   console.log(term);
