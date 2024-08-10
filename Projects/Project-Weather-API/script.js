@@ -8,36 +8,34 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   API_KEY = key.value;
   console.log(API_KEY);
+  console.log(search.value);
+
   img.src = "loading.gif";
   searchCB(search.value);
 });
 
-function searchCB(term) {
-  fetch(
-    `https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=${term}}`,
-    {
-      mode: "cors",
-    }
-  )
-    .then((response) => {
-      if (response.status == 401) {
-        throw new Error("BAD API KEY");
-      } else {
-        return response.json();
+async function searchCB(term) {
+  try {
+    const response = await fetch(
+      `https://api.giphy.com/v1/gifs/translate?api_key=${API_KEY}&s=${term}}`,
+      {
+        mode: "cors",
       }
-    })
-    .then((response) => {
-      console.log(response);
-      if (response.data.length == 0) {
+    );
+
+    if (response.status == 401) {
+      throw new Error("BAD API KEY");
+    } else {
+      const gifData = await response.json();
+      console.log(gifData);
+      if (gifData.data.length == 0) {
         img.src = "nothing_found.png";
       } else {
-        img.src = response.data.images.original.url;
+        img.src = gifData.data.images.original.url;
       }
-    })
-    .catch((response) => {
-      img.src = "bad_key.png";
-      console.log(response);
-    });
-
-  console.log(term);
+    }
+  } catch (error) {
+    img.src = "bad_key.png";
+    console.log(error);
+  }
 }
