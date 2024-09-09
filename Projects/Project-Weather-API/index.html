@@ -2,22 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
-    <script src="script.js" defer type="module"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <form id="apiForm" action="">
+    <h1>Weather App</h1>
+    <form action="">
       <div>
-        <label for="key">Enter your GIPHY API key:</label>
-        <input type="text" name="key" id="key" />
+        <label for="API_KEY">Enter API Key:</label>
+        <input type="password" name="API_KEY" id="API_KEY" />
       </div>
       <div>
-        <label for="search">Enter a gif to look up:</label>
+        <label for="search">Search Location:</label>
         <input type="text" name="search" id="search" />
       </div>
-      <button type="submit">Submit</button>
+      <button>Submit</button>
     </form>
-    <img src="loading.gif" />
+    <div id="weather-display">
+      <div id="weather-loading">
+        <img src="images/loading.gif" id="loading-image" alt="" />
+      </div>
+      <div id="weather-location"></div>
+      <div id="weather-data"></div>
+    </div>
   </body>
 </html>
