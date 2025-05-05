@@ -1,5 +1,48 @@
-img {
-  height: 400px;
-  width: 400px;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
   padding: 20px;
+}
+
+#weather-display {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#weather-loading {
+  display: none;
+}
+
+/* display contents basically ignors the fact it is a div */
+#weather-data-header {
+  display: contents; /* Use the container itself for grid placement */
+}
+
+#weather-data-header p {
+  font-weight: bold;
+  color: red;
+}
+
+#weather-data {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 5 equal columns */
+  grid-auto-rows: auto; /* Rows adjust to content */
+  gap: 10px; /* Gap between items */
+  align-items: center;
+  text-align: center;
+}
+
+.daily {
+  display: contents; /* Use the container itself for grid placement */
+}
+
+.daily p,
+.daily img {
+  margin: 0;
+}
+
+.daily img {
+  width: 50px; /* Adjust the size of the icon */
+  margin: 0 auto; /* Center the icon */
 }
