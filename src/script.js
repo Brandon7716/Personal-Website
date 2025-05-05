@@ -24,5 +24,4 @@ async function fetchLastUpdate() {
   }
 }
 
-// Call it
 fetchLastUpdate();
