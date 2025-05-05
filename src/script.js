@@ -8,11 +8,21 @@ async function fetchLastUpdate() {
     );
     const data = await response.json();
     const date = data.commit.commit.author.date;
-    lastUpdateText.textContent = new Date(date).toLocaleString();
+
+    // Format the date as "Month Day, Year"
+    const formattedDate = new Date(date).toLocaleDateString("en-US", {
+      month: "long", // Full month name
+      day: "numeric", // Day of the month
+      year: "numeric", // Full year
+    });
+
+    lastUpdateText.textContent = formattedDate;
+    console.log(formattedDate);
   } catch (error) {
     lastUpdateText.textContent = `Error: ${error.message}`;
     console.error("Error fetching last update:", error);
   }
 }
 
+// Call it
 fetchLastUpdate();
