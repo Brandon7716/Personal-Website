@@ -1,7 +1,7 @@
 import { createHome } from "./home.js";
 import { createMenu } from "./menu.js";
 import { createContact } from "./contact.js";
-// Must use this for dist to output style.css
+// Must use this for webpack to inject css into html
 import "./style.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 

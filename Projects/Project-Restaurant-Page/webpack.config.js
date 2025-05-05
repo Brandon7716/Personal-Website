@@ -1,5 +1,5 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
@@ -7,14 +7,28 @@ module.exports = {
   mode: "production",
   entry: "./src/index.js",
   output: {
-    filename: "bundle.js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    clean: true,
   },
+  devtool: "eval-source-map",
+  devServer: {
+    watchFiles: ["./src/template.html"],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/template.html",
+    }),
+  ],
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -36,33 +50,15 @@ module.exports = {
     minimize: true,
     minimizer: [
       new TerserPlugin(),
-      // Minify CSS
-      new MiniCssExtractPlugin(),
-
       new ImageMinimizerPlugin({
         minimizer: {
           implementation: ImageMinimizerPlugin.sharpMinify,
           options: {
             encodeOptions: {
-              jpeg: {
-                // https://sharp.pixelplumbing.com/api-output#jpeg
-                quality: 10,
-              },
-              webp: {
-                // https://sharp.pixelplumbing.com/api-output#webp
-                lossless: false,
-              },
-              avif: {
-                // https://sharp.pixelplumbing.com/api-output#avif
-                lossless: false,
-              },
-
-              // png by default sets the quality to 100%, which is same as lossless
-              // https://sharp.pixelplumbing.com/api-output#png
+              jpeg: { quality: 10 },
+              webp: { lossless: false },
+              avif: { lossless: false },
               png: { quality: 10 },
-
-              // gif does not support lossless compression at all
-              // https://sharp.pixelplumbing.com/api-output#gif
               gif: {},
             },
           },
@@ -70,8 +66,4 @@ module.exports = {
       }),
     ],
   },
-  plugins: [
-    // Extract minified CSS into a separate file
-    new MiniCssExtractPlugin({ filename: "style.css" }),
-  ],
 };
